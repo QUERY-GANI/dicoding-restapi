@@ -27,6 +27,21 @@ const routes = [
         },
     },
     {
+        method: 'GET',
+        path: '/register',
+        handler: (request, h) => {
+            const response = h.response('success');
+            response.type('text/plain');
+            response.header('X-Custom', 'some-value');
+            return response;
+
+            // Chained notation
+            // return h.response('success')
+            //         .type('text/plain')
+            //         .header('X-Custom', 'some-value');
+        },
+    },
+    {
         method: '*',
         path: '/',
         handler: (request, h) => {
