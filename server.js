@@ -4,6 +4,7 @@ const HOST = "localhost";
 
 const requestListener = (request, response) => {
     response.setHeader('Content-Type', 'text/html');
+    response.setHeader('X-Powered-By', 'NodeJS');
     const { method, url } = request;
     if(url === '/') {
         // TODO 2: logika respons bila url bernilai '/'
